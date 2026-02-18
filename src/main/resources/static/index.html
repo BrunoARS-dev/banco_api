@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Bancário API</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🏦 Banco Digital API</h1>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Abrir Nova Conta</h2>
+            <div class="input-group">
+                <input type="number" id="numero" placeholder="Número da conta">
+                <button onclick="criarConta()">Criar Conta</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Consultar Conta</h2>
+            <div class="input-group">
+                <input type="text" pattern="[0-9]" id="buscar_numero" placeholder="Digite o número">
+                <button onclick="buscarConta()" class="btn-alt">Buscar</button>
+            </div>
+        </section>
+
+        <section id="deposito" class="card">
+            <h2>Realizar Depósito</h2>
+            <div class="input-group">
+                <input type="number" id="deposito_numero" placeholder="Nº da Conta">
+                <input type="number" id="deposito_valor" placeholder="Valor R$">
+                <button onclick="depositar()" class="btn-success">Depositar</button>
+            </div>
+            <h2 id="titulo-saque">Realizar Saque</h2>
+            <div class="input-group">
+                <input type="number" id="saque_numero" placeholder="Nº da Conta">
+                <input type="number" id="saque_valor" placeholder="Valor R$">
+                <button onclick="sacar()" class="btn-success">Sacar</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Transferência entre Contas</h2>
+            <div class="input-stack">
+                <input type="number" id="origem" placeholder="Conta Origem">
+                <input type="number" id="destino" placeholder="Conta Destino">
+                <input type="number" id="valor" placeholder="Valor R$">
+                <button onclick="transferir()">Confirmar Transferência</button>
+            </div>
+        </section>
+
+        <section class="card wide">
+            <h2>Painel de Contas</h2>
+            <button onclick="listarContas()" class="btn-alt">Listar contas</button>
+            <div id="lista-contas" class="resultado-area">
+                <p>Clique em atualizar para carregar os dados...</p>
+            </div>
+        </section>
+    </main>
+
+ 	<script src='/src/script.js'></script>
+
+</body> 
+</html>

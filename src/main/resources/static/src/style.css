@@ -1,0 +1,119 @@
+:root {
+    --primary: #4e54c8;
+    --success: #2ecc71;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --input-bg: #334155;
+}
+
+/* Para Chrome, Safari, Edge e Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.card.wide {
+    grid-column: 1 / -1;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: #94a3b8;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.input-group, .input-stack {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.input-stack {
+    flex-direction: column;
+}
+
+input {
+    background-color: var(--input-bg);
+    border: 1px solid #475569;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover { opacity: 0.8; transform: translateY(-2px); }
+
+.btn-alt { background-color: #6366f1; }
+.btn-success { background-color: var(--success); }
+
+.resultado-area {
+    margin-top: 15px;
+    padding: 15px;
+    background: #000;
+    border-radius: 8px;
+    font-family: monospace;
+    min-height: 50px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+#titulo-saque{
+	margin-top: 20px;
+}

@@ -1,6 +1,8 @@
 package com.example.banco_api;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,6 +33,21 @@ public class ContaControler {
 		this.bancoService = bancoService;
 	}
 
+	@RestController
+	public class HomeController {
+
+	    @GetMapping("/")
+	    public Map<String, String> home() {
+
+	        Map<String, String> info = new HashMap<>();
+
+	        info.put("name", "Banco Digital API");
+	        info.put("version", "1.0");
+	        info.put("documentation", "/swagger-ui/index.html");
+
+	        return info;
+	    }
+	}
 	
 	@PostMapping
 	public ResponseEntity<Conta> criarConta(@RequestBody Conta conta) {

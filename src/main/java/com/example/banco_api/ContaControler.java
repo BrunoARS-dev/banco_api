@@ -3,6 +3,7 @@ package com.example.banco_api;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,7 @@ import org.springframework.http.ResponseEntity;
 
 
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/contas")
 public class ContaControler {
@@ -81,6 +82,11 @@ public class ContaControler {
 	    return ResponseEntity.ok("Transferência realizada com sucesso!");
 	}
 
+	@DeleteMapping("/{numero}")
+	public ResponseEntity<Void> deletar(@PathVariable Integer numero) {
+	    bancoService.deletarConta(numero);
+	    return ResponseEntity.noContent().build();
+	}
 	
 }
 

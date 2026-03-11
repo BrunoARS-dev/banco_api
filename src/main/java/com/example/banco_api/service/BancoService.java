@@ -90,5 +90,18 @@ public class BancoService {
         repository.save(origem);
         repository.save(destino);
     }
+    
+    public void deletarConta(Integer numero) {
+
+        Conta conta = buscarConta(numero);
+
+        if (conta.getSaldo() != 0) {
+            throw new OperacaoInvalidaException(
+                "Conta não pode ser removida pois possui saldo diferente de zero"
+            );
+        }
+
+        repository.delete(conta);
+    }
 
 }
